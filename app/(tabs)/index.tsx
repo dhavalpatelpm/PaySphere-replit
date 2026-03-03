@@ -102,7 +102,7 @@ export default function HomeScreen() {
           <View style={styles.headerTop}>
             <View>
               <Text style={styles.greetingText}>Good morning,</Text>
-              <Text style={styles.userName}>Vikram Kumar</Text>
+              <Text style={styles.userName}>Dhaval Patel</Text>
             </View>
             <View style={styles.headerRight}>
               <TouchableOpacity style={styles.notifBtn} onPress={() => {}}>
@@ -110,7 +110,7 @@ export default function HomeScreen() {
                 <View style={styles.notifDot} />
               </TouchableOpacity>
               <View style={styles.avatar}>
-                <Text style={styles.avatarText}>V</Text>
+                <Text style={styles.avatarText}>D</Text>
               </View>
             </View>
           </View>

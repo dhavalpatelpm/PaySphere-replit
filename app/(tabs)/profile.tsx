@@ -86,11 +86,11 @@ export default function ProfileScreen() {
         {/* Profile Header */}
         <LinearGradient colors={["#1A0E3D", "#2D1B6B"]} style={[styles.profileHeader, { paddingTop: topPadding + 20 }]}>
           <View style={styles.avatarLarge}>
-            <Text style={styles.avatarLargeText}>V</Text>
+            <Text style={styles.avatarLargeText}>D</Text>
           </View>
-          <Text style={styles.profileName}>Vikram Kumar</Text>
+          <Text style={styles.profileName}>Dhaval Patel</Text>
           <Text style={styles.profilePhone}>+91 9876543210</Text>
-          <Text style={styles.profileUpi}>vikram@paysphere</Text>
+          <Text style={styles.profileUpi}>dhaval@paysphere</Text>
 
           <View style={styles.kycBadge}>
             <Ionicons name="checkmark-circle" size={14} color="#00C48C" />
