@@ -237,14 +237,14 @@ export default function ShopScreen() {
             </View>
             <Text style={styles.deliveryTime}>Delivery in 8 minutes</Text>
           </View>
-          {cartCount > 0 && (
-            <TouchableOpacity style={styles.cartIconBtn} onPress={checkout} activeOpacity={0.85}>
-              <Ionicons name="bag" size={19} color="#fff" />
+          <TouchableOpacity style={styles.cartIconBtn} onPress={checkout} activeOpacity={0.85}>
+            <Ionicons name="bag" size={19} color="#fff" />
+            {cartCount > 0 && (
               <View style={styles.cartBadge}>
                 <Text style={styles.cartBadgeText}>{cartCount}</Text>
               </View>
-            </TouchableOpacity>
-          )}
+            )}
+          </TouchableOpacity>
         </View>
         <View style={styles.searchBar}>
           <Ionicons name="search-outline" size={17} color={Colors.textTertiary} />
