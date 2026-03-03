@@ -145,11 +145,11 @@ export default function HomeScreen() {
             <View style={styles.balanceFooter}>
               <View style={styles.balanceStat}>
                 <Ionicons name="arrow-down-circle" size={15} color="#00C48C" />
-                <Text style={styles.balanceStatText}>₹45,000 received</Text>
+                <Text style={styles.balanceStatText}>₹75,00,000 received</Text>
               </View>
               <View style={styles.balanceStat}>
                 <Ionicons name="arrow-up-circle" size={15} color="#FF6B8A" />
-                <Text style={styles.balanceStatText}>₹2,963 spent</Text>
+                <Text style={styles.balanceStatText}>₹13,00,000 spent</Text>
               </View>
             </View>
           </View>

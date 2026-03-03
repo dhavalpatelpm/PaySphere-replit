@@ -34,6 +34,8 @@ const AppContext = createContext<AppContextValue | null>(null);
 
 const STORAGE_KEY_BALANCE = "@paysphere_balance";
 const STORAGE_KEY_TRANSACTIONS = "@paysphere_transactions";
+const STORAGE_KEY_VERSION = "@paysphere_version";
+const APP_VERSION = "2";
 
 const DEFAULT_CONTACTS: Contact[] = [
   { id: "1", name: "Priya Sharma", phone: "9876543210", upiId: "priya@ybl", avatar: "P", recent: true },
@@ -114,12 +116,18 @@ const DEFAULT_TRANSACTIONS: Transaction[] = [
 ];
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [balance, setBalance] = useState(24850);
+  const [balance, setBalance] = useState(6200000);
   const [transactions, setTransactions] = useState<Transaction[]>(DEFAULT_TRANSACTIONS);
 
   useEffect(() => {
     (async () => {
       try {
+        const version = await AsyncStorage.getItem(STORAGE_KEY_VERSION);
+        if (version !== APP_VERSION) {
+          await AsyncStorage.multiRemove([STORAGE_KEY_BALANCE, STORAGE_KEY_TRANSACTIONS]);
+          await AsyncStorage.setItem(STORAGE_KEY_VERSION, APP_VERSION);
+          return;
+        }
         const storedBalance = await AsyncStorage.getItem(STORAGE_KEY_BALANCE);
         const storedTxns = await AsyncStorage.getItem(STORAGE_KEY_TRANSACTIONS);
         if (storedBalance) setBalance(parseFloat(storedBalance));
