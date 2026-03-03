@@ -116,13 +116,13 @@ function ProductCard({
 }) {
   return (
     <View style={productStyles.card}>
-      {product.tag && (
-        <View style={productStyles.tag}>
-          <Text style={productStyles.tagText}>{product.tag}</Text>
-        </View>
-      )}
       <View style={[productStyles.imageBox, { backgroundColor: product.bg }]}>
         <Ionicons name={product.icon} size={38} color={product.color} />
+        {product.tag && (
+          <View style={productStyles.tag}>
+            <Text style={productStyles.tagText}>{product.tag}</Text>
+          </View>
+        )}
         <View style={productStyles.deliveryPill}>
           <Ionicons name="flash" size={9} color={Colors.orange} />
           <Text style={productStyles.deliveryText}>8 min</Text>
@@ -159,7 +159,7 @@ function ProductCard({
 
 const productStyles = StyleSheet.create({
   card: { width: 148, backgroundColor: "#fff", borderRadius: 14, padding: 10, marginRight: 10 },
-  tag: { backgroundColor: Colors.primary, borderRadius: 5, paddingHorizontal: 6, paddingVertical: 2, alignSelf: "flex-start", marginBottom: 6 },
+  tag: { position: "absolute", top: 6, left: 6, backgroundColor: Colors.primary, borderRadius: 5, paddingHorizontal: 6, paddingVertical: 2, zIndex: 1 },
   tagText: { fontFamily: "Inter_700Bold", fontSize: 8, color: "#fff", letterSpacing: 0.4 },
   imageBox: { width: "100%", height: 88, borderRadius: 10, alignItems: "center", justifyContent: "center", marginBottom: 8, position: "relative" },
   deliveryPill: { position: "absolute", bottom: 5, left: 6, flexDirection: "row", alignItems: "center", gap: 2, backgroundColor: "#fff", borderRadius: 8, paddingHorizontal: 5, paddingVertical: 2 },
