@@ -101,24 +101,10 @@ export default function HomeScreen() {
           style={[styles.header, { paddingTop: topPadding + 16 }]}
         >
           <View style={styles.headerTop}>
-            {/* Left — greeting */}
             <View>
               <Text style={styles.greetingText}>Good morning,</Text>
               <Text style={styles.userName}>Dhaval Patel</Text>
             </View>
-
-            {/* Center — PaySphere logo (absolutely centered) */}
-            <View style={styles.centerLogo} pointerEvents="none">
-              <View style={styles.logoRing}>
-                <Ionicons name="planet" size={22} color="#fff" />
-              </View>
-              <Text style={styles.logoWordmark}>
-                <Text style={styles.logoWordPay}>Pay</Text>
-                <Text style={styles.logoWordSphere}>Sphere</Text>
-              </Text>
-            </View>
-
-            {/* Right — actions */}
             <View style={styles.headerRight}>
               <TouchableOpacity style={styles.notifBtn} onPress={() => {}}>
                 <Ionicons name="notifications-outline" size={22} color="rgba(255,255,255,0.9)" />
@@ -265,42 +251,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 20,
-  },
-  centerLogo: {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    alignItems: "center",
-  },
-  logoRing: {
-    width: 46,
-    height: 46,
-    borderRadius: 23,
-    backgroundColor: "rgba(255,255,255,0.15)",
-    borderWidth: 1.5,
-    borderColor: "rgba(255,255,255,0.3)",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 5,
-    shadowColor: "#fff",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 4,
-  },
-  logoWordmark: {
-    fontSize: 11,
-    letterSpacing: 0.5,
-  },
-  logoWordPay: {
-    fontFamily: "Inter_400Regular",
-    fontSize: 11,
-    color: "rgba(255,255,255,0.75)",
-  },
-  logoWordSphere: {
-    fontFamily: "Inter_700Bold",
-    fontSize: 11,
-    color: "#fff",
   },
   greetingText: {
     fontFamily: "Inter_400Regular",
